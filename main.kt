@@ -38,12 +38,19 @@ fun menuPrincipal() {
 }
 
 fun showMyRecipes() {
-    println("En construccón...")
-    println("Eliga otra opción por favor")
+    println("En construccion, selecciona otra opcion")
     main()
 }
 
 fun makeRecipe() {
+    val ingOne = "agua"
+    val ingTwo = "leche"
+    val ingThr = "carne"
+    val ingFou = "verduras"
+    val ingFiv = "frutas"
+    val ingSix = "cereal"
+    val ingSev = "huevos"
+    val ingEig = "aceite"
     val options = """
         ::Selecciona una opcion para agregar a tu receta::
         
@@ -57,38 +64,51 @@ fun makeRecipe() {
         8. Aceite
         9. Salir
     """.trimIndent()
-
+    var recipe = arrayOf<String>()
     var response: String?
+
     do {
         println(options)
         response = readLine()
 
         when (response) {
             "1" -> {
-                println("Agregando agua..")
+                println("Agregando $ingOne..")
+                recipe = recipe.plus(ingOne)
             }
             "2" -> {
-                println("Agregando leche..")
+                println("Agregando $ingTwo..")
+                recipe = recipe.plus(ingTwo)
             }
             "3" -> {
-                println("Agregando carne..")
+                println("Agregando $ingThr..")
+                recipe = recipe.plus(ingThr)
             }
             "4" -> {
-                println("Agregando verduras..")
+                println("Agregando $ingFou..")
+                recipe = recipe.plus(ingFou)
             }
             "5" -> {
-                println("Agregando fruta..")
+                println("Agregando $ingFiv..")
+                recipe = recipe.plus(ingFiv)
             }
             "6" -> {
-                println("Agregando cereal..")
+                println("Agregando $ingSix..")
+                recipe = recipe.plus(ingSix)
             }
             "7" -> {
-                println("Agregando huevo..")
+                println("Agregando $ingSev..")
+                recipe = recipe.plus(ingSev)
             }
             "8" -> {
-                println("Agregando aceite..")
+                println("Agregando $ingEig..")
+                recipe = recipe.plus(ingEig)
             }
             "9" -> {
+                println("Esta es tu receta")
+                for (ing in recipe) {
+                    println("Ingrediente: $ing")
+                }
                 println("Saliendo..\n")
                 main()
             }
